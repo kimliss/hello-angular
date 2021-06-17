@@ -29,6 +29,12 @@ jobs:
           npm ci
           npm run build -- --base-href /hello-angular/
 
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ./dist/hello-angular
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
