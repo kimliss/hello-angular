@@ -32,9 +32,10 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/hello-angular/*"
+          upload_url: "docs"
           token: ${{ secrets.TOKEN }}
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          publish_dir: dist/hello-angular
+          publish_dir: docs
