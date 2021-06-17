@@ -2,8 +2,7 @@ name: github pages
 
 on:
   push:
-    tags:
-    - '*'
+    branches: [ master ]
 
 jobs:
   deploy:
@@ -25,7 +24,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
-      - run: npm run build --base-href /hello-angular/
+      - run: npm run build --base-href="/hello-angular/"
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
